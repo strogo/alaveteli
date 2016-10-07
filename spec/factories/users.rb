@@ -47,6 +47,10 @@ FactoryGirl.define do
       name 'Admin User'
       admin_level 'super'
     end
+
+    factory :pro_user do
+      pro true
+    end
   end
 
 end

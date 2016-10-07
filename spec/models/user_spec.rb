@@ -904,4 +904,18 @@ describe User do
 
   end
 
+  describe User do
+    describe "pro user flag" do
+      it "defaults to false" do
+        normal_user = FactoryGirl.build(:user)
+        expect(normal_user.pro?).to be false
+      end
+
+      it "can be true" do
+        pro_user = FactoryGirl.build(:pro_user)
+        expect(pro_user.pro?).to be true
+      end
+    end
+  end
+
 end
