@@ -922,3 +922,12 @@ EXTERNAL_REVIEWERS: ''
 #
 # ---
 ENABLE_ANNOTATIONS: true
+
+# Enable Alaveteli Professional.
+# If ENABLE_ALAVETELI_PRO is set to true, Alaveteli will turn on extra
+# features for "professional" users, e.g. Journalists.
+#
+# ENABLE_ALAVETELI_PRO – Boolean (default: false)
+#
+# ---
+ENABLE_ALAVETELI_PRO: false
