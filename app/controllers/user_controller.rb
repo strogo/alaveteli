@@ -127,6 +127,9 @@ class UserController < ApplicationController
         if is_modal_dialog
           render :action => 'signin_successful'
         else
+          if feature_enabled?(:alaveteli_pro) && @user_signin.pro?
+            flash[:notice] = "You're a pro!"
+          end
           do_post_redirect @post_redirect
         end
       else

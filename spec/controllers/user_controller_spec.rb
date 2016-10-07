@@ -571,6 +571,21 @@ describe UserController, "when signing in" do
 
   end
 
+  context "when alaveteli_pro is enabled" do
+    before do
+      allow(controller).to receive(:feature_enabled?).with(:alaveteli_pro).and_return(true)
+    end
+
+    it "should show pro users a message when they log in" do
+      get :signin, :r => "/list"
+      expect(response).to render_template('sign')
+      post_redirect = get_last_postredirect
+      post :signin, { :user_signin => { :email => 'pro@localhost', :password => 'jonespassword' },
+                      :token => post_redirect.token }
+      expect(flash[:notice]).to eq "You're a pro!"
+    end
+  end
+
   it "should ask you to confirm your email if it isn't confirmed, after log in" do
     get :signin, :r => "/list"
     expect(response).to render_template('sign')
