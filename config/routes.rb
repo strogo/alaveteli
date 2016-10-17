@@ -11,6 +11,22 @@ $alaveteli_route_extensions.each do |f|
 end
 
 Alaveteli::Application.routes.draw do
+
+  #### Prototype routes
+  match '/ap/login' => 'AlaveteliProfessional#login',
+        :as => :ap_login,
+        :via => :get
+
+  match '/ap/frontpage' => 'AlaveteliProfessional#frontpage',
+        :as => :ap_home,
+        :via => :get
+
+  match '/ap/find_auth' => 'AlaveteliProfessional#find_auth',
+        :as => :ap_find_auth,
+        :via => :get
+
+  ####
+
   #### General contoller
   match '/' => 'general#frontpage',
         :as => :frontpage,
