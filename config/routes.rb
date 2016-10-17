@@ -25,6 +25,10 @@ Alaveteli::Application.routes.draw do
         :as => :ap_find_auth,
         :via => :get
 
+  match '/ap/find_auth_2' => 'AlaveteliProfessional#find_auth_2',
+        :as => :ap_find_auth_2,
+        :via => :get
+
   ####
 
   #### General contoller
