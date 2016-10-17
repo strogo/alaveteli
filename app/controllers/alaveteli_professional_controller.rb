@@ -20,4 +20,7 @@ class AlaveteliProfessionalController < ApplicationController
   def preview_request
   end
 
+  def dashboard
+  end
+
 end

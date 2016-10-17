@@ -36,6 +36,11 @@ Alaveteli::Application.routes.draw do
   match '/ap/preview_request' => 'AlaveteliProfessional#preview_request',
       :as => :preview_request,
       :via => :get
+
+  match '/ap/dashboard' => 'AlaveteliProfessional#dashboard',
+      :as => :dashboard,
+      :via => [ :get, :post ]
+
   ####
 
   #### General contoller
