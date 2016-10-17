@@ -14,4 +14,10 @@ class AlaveteliProfessionalController < ApplicationController
   def find_auth_2
   end
 
+  def write_request
+  end
+
+  def preview_request
+  end
+
 end
