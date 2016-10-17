@@ -17,8 +17,8 @@ Alaveteli::Application.routes.draw do
         :as => :ap_login,
         :via => :get
 
-  match '/ap/frontpage' => 'AlaveteliProfessional#frontpage',
-        :as => :ap_home,
+  match '/' => 'AlaveteliProfessional#frontpage',
+        :as => :frontpage,
         :via => :get
 
   match '/ap/find_auth' => 'AlaveteliProfessional#find_auth',
@@ -44,9 +44,9 @@ Alaveteli::Application.routes.draw do
   ####
 
   #### General contoller
-  match '/' => 'general#frontpage',
-        :as => :frontpage,
-        :via => :get
+  # match '/frontpage' => 'general#frontpage',
+  #       :as => :frontpage,
+  #       :via => :get
   match '/blog' => 'general#blog',
         :as => :blog,
         :via => :get
