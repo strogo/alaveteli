@@ -35,7 +35,7 @@ Alaveteli::Application.routes.draw do
 
   match '/ap/preview_request' => 'AlaveteliProfessional#preview_request',
       :as => :preview_request,
-      :via => :get
+      :via => [ :get, :post ]
 
   match '/ap/dashboard' => 'AlaveteliProfessional#dashboard',
       :as => :dashboard,
