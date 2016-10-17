@@ -9,18 +9,23 @@ class AlaveteliProfessionalController < ApplicationController
   end
 
   def find_auth
+    render :find_auth, :layout => 'pro'
   end
 
   def find_auth_2
+    render :find_auth_2, :layout => 'pro'
   end
 
   def write_request
+    render :write_request, :layout => 'pro'
   end
 
   def preview_request
+    render :preview_request, :layout => 'pro'
   end
 
   def dashboard
+    render :dashboard, :layout => 'pro'
   end
 
 end
