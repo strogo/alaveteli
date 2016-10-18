@@ -92,6 +92,45 @@ Yours faithfully,
 Louise Crow</textarea>
         </p>
 
+        <p>
+          <label class="form_label" for="outgoing_message_embargo">
+            Embargo
+          </label>
+        </p>
+        <p>
+            <input type="checkbox"
+                   value="1"
+                   id="outgoing_message_embargo"
+                   class="js-embargo-checkbox"
+                   name="outgoing_message[embargo]">&nbsp;Embargo this request?
+
+        </p>
+        <div class="js-hide js-embargo-duration">
+          <p>
+            <label class="form_label" for="outgoing_message_embargo_duration">
+              How long for?
+            </label>
+            <select id="outgoing_message_embargo_duration"
+                    name="outgoing_message[embargo_duration]">
+              <option value="3_months">3 Months</option>
+              <option value="6_months">6 Months</option>
+              <option value="9_months">9 Months</option>
+              <option value="12_months">12 Months</option>
+              <option value="forever" disabled>
+                Forever (you need to upgrade your account for permanent embargoes)
+              </option>
+            </select>
+          </p>
+          <p>
+            <label class="form_label">
+              <input type="checkbox"
+                     value="1"
+                     id="set_embargo_default"
+                     name="set_embargo_default">&nbsp;Use these embargo settings for my future requests
+            </label>
+          </p>
+        </div>
+
       <div class="form_button">
           <input id="info_request_public_body_id" name="info_request[public_body_id]" value="1016" type="hidden">
         <input id="submitted_new_request" name="submitted_new_request" value="1" type="hidden">
