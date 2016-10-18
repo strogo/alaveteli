@@ -1,3 +1,152 @@
-DASHBOARD!
+<div class="dashboard">
 
-<a href="/ap/find_auth">Make a request</a>
+  <div class="dashboard-header">
+
+    <div class="dashboard-left-column">
+
+      <p class="dashboard-profile">
+        <img src="http://www.fillmurray.com/50/50" class="dashboard-profile__image">
+        <span class="dashboard-profile__name">Bill Murray</span>
+        <br/>
+        <span class="dashboard-profile__email">bill.murray@gmail..</span>
+      </p>
+
+    </div>  <!-- .dashboard-left-column -->
+
+    <div class="dashboard-right-column">
+
+      <ul class="dashboard-nav">
+        <li class="dashboard-nav__item dashboard-nav__item--highlighted">
+          <a href="#">Dashboard</a>
+        </li>
+        <li class="dashboard-nav__item">
+          <a href="#">Account</a>
+        </li>
+        <li class="dashboard-nav__item">
+          <a href="#">Wall</a>
+        </li>
+        <li class="dashboard-nav__item">
+          <a href="#">Profile</a>
+        </li>
+        <li class="dashboard-nav__item">
+          <a href="#">Requests</a>
+        </li>
+        <li class="dashboard-nav__item dashboard-nav__item--right">
+          <a href="/ap/find_auth">Start new request</a>
+        </li>
+      </ul>
+
+    </div>  <!-- .dashboard-right-column -->
+
+  </div>  <!-- .dashboard-header -->
+
+  <h1>Your dashboard</h1>
+
+  <div class="dashboard-body">
+
+    <div class="dashboard-left-column">
+
+      <ul class="dashboard-folders">
+        <li class="dashboard-folder">
+          <a href="#">
+            Drafts
+            <span class="dashboard-folder__count">3</span>
+          </a>
+        </li>
+        <li class="dashboard-folder">
+          <a href="#">
+            Awaiting response
+            <span class="dashboard-folder__count">7</span>
+          </a>
+        </li>
+        <li class="dashboard-folder">
+          <a href="#">
+            Response received
+            <span class="dashboard-folder__count">1</span>
+          </a>
+        </li>
+        <li class="dashboard-folder dashboard-folder--disabled">
+          Clarification needed
+          <span class="dashboard-folder__count">0</span>
+        </li>
+        <li class="dashboard-folder">
+          <a href="#">
+            Complete
+            <span class="dashboard-folder__count">3</span>
+          </a>
+        </li>
+        <li class="dashboard-folder">
+          <a href="#">
+            Status unknown
+            <span class="dashboard-folder__count">7</span>
+          </a>
+        </li>
+        <li class="dashboard-folder">
+          <a href="#">
+            All requests
+            <span class="dashboard-folder__count">18</span>
+          </a>
+        </li>
+      </ul>
+
+    </div> <!-- .dashboard-left-column -->
+
+    <div class="dashboard-right-column">
+
+      <div class="dashboard-todo">
+
+        <h2 class="dashboard-todo__title">Things to do today</h2>
+
+        <ul class="dashboard-todo__list">
+          <li class="dashboard-todo__list__item">
+            7 requests are Status unknown. <a href="#">Update statuses.</a>
+          </li>
+          <li class="dashboard-todo__list__item">
+            1 embargo is ending this week. <a href="#">Extend or approve this
+            embargo.</a>
+          </li>
+        </ul>
+
+      </div>  <!-- .dashboard-todo -->
+
+      <div class="dashboard-activity">
+
+        <h2 class="dashboard-activity__title">Activity</h2>
+
+        <div class="dashboard-activity__item">
+          <div class="dashboard-activity__item__time">Today</div>
+          <div class="dashboard-activity__item__description">
+            <p>
+              Your request <a href="#">“How much is spent on subsidised
+              parking”</a> has a new response.
+            </p>
+          </div>
+        </div>
+
+        <div class="dashboard-activity__item">
+          <div class="dashboard-activity__item__time">Yesterday</div>
+          <div class="dashboard-activity__item__description">
+            <p>
+              The embargo for your request “Secondary schools place assignment
+              in Leicester” has ended and is now live. <a href="#">View</a>
+            </p>
+          </div>
+        </div>
+
+        <div class="dashboard-activity__item">
+          <div class="dashboard-activity__item__time">12/07/2016</div>
+          <div class="dashboard-activity__item__description">
+            <p>
+              The response rate for your batch request <a href="#">“Intimate
+              details of in-house IT systems”</a> has reached 25%.
+            </p>
+          </div>
+        </div>
+
+      </div> <!-- .dashboard-activity -->
+
+    </div>  <!-- .dashboard-right-column -->
+
+  </div>  <!-- .dashboard-body -->
+
+</div>  <!-- .dashboard -->
