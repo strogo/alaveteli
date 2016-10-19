@@ -20,4 +20,16 @@
       return false;
     });
   });
+
+  var $marketingHeadline = $('.marketing h1 .bottomline');
+  $(function(){
+    $marketingHeadline.html('');
+    $marketingHeadline.typed({
+      strings: ['Newsdesk', 'Trade journal', 'Local paper', 'Financial Times'],
+      typeSpeed: 50,
+      startDelay: 250,
+      backDelay: 2000,
+      loop: true,
+    });
+  });
 })(window.jQuery);
