@@ -10,4 +10,14 @@
       }
     });
   });
+
+  var $accountLink = $('.js-account-link');
+  var $accountMenu = $('.js-account-menu');
+  $(function(){
+    $accountLink.click(function(e){
+      e.preventDefault();
+      $accountMenu.slideToggle(250);
+      return false;
+    });
+  });
 })(window.jQuery);
