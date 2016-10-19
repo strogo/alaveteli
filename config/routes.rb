@@ -41,6 +41,10 @@ Alaveteli::Application.routes.draw do
       :as => :dashboard,
       :via => [ :get, :post ]
 
+  match '/ap/marketing' => 'AlaveteliProfessional#marketing',
+      :as => :marketing,
+      :via => [ :get ]
+
   ####
 
   #### General contoller
