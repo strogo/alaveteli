@@ -34,4 +34,32 @@
       });
     }
   });
+
+  var $addToRequestButtons = $('.js-add-to-request-button');
+  var $recipients = $('.js-recipients');
+  var $recipientList = $('.js-recipients-list');
+  var bindRemovalButtons = function bindRemovalButtons() {
+    $('.js-recipient-remove').click(function(e) {
+      e.preventDefault();
+      var recipientName = $(this).data('recipient-name');
+      $(this).parent().remove();
+      $addToRequestButtons.filter('.disabled[data-recipient-name="' + recipientName + '"]').removeClass('disabled').text('Add to request');
+    });
+  };
+
+  $(function(){
+    bindRemovalButtons();
+    $addToRequestButtons.click(function(e){
+      e.preventDefault();
+      if(!$(this).hasClass('disabled')) {
+        var recipientName = $(this).data('recipient-name');
+        var $recipient = $('<div class="recipient"></div>');
+        $recipient.html(recipientName + ' <a class="recipient-remove js-recipient-remove" data-recipient-name="' + recipientName + '" href="#">x</a>');
+        $(this).addClass('disabled').text('Added to request');
+        $recipients.slideDown();
+        $recipientList.append($recipient);
+        bindRemovalButtons();
+      }
+    });
+  });
 })(window.jQuery);

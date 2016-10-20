@@ -1,7 +1,8 @@
 <h1>Find an authority</h1>
 
 <div id="authority_selection" class="authority_selection">
-  <form accept-charset="UTF-8" action="/select_authority" id="search_form" method="get"><div style="margin:0;padding:0;display:inline"><input name="utf8" value="✓" type="hidden"></div>
+  <form accept-charset="UTF-8" action="/select_authority" id="search_form" method="get">
+    <div style="margin:0;padding:0;display:inline"><input name="utf8" value="✓" type="hidden"></div>
     <div>
       <p>
         First, type in the <strong>name of the public authority</strong> you'd
@@ -13,118 +14,156 @@
       <input id="bodies" name="bodies" value="1" type="hidden">
       <input name="commit" value="Search" type="submit">
     </div>
+  </form>
 
-</form>
-  <div id="typeahead_response" class="typeahead_response">    <p>Matching authorities</p>
-  <div class="authority_search_ahead_results_container">
-    <div id="authority_search_ahead_results">
-
-<div class="body_listing">
-  <span class="head">
-    <a href="https://www.whatdotheyknow.com/body/number_10">Prime Minister’s Office</a>
-  </span>
-  <span class="desc">
-        Also called Number 10.
-        The Prime Minister or PM is the Head of the UK Government, based
- in 10 Downing Street ("Number 10"). The Prime Minister is ultimately
-responsible for t...
-      <br>
-  </span>
-  <span class="bottomline">
-    896 requests made.
-    <br>
-    <span class="date_added">
-      Added on <time datetime="2008-04-20T08:02:30+01:00" title="2008-04-20 08:02:30 +0100">20 April 2008</time>.
-    </span>
-    <br>
-  </span>
-
-    <div class="make-request-quick-button">
-      <a href="/ap/write_request" class="link_button_green">Make a request</a>
-    </div>
-</div>
-
-
-
-<div class="body_listing">
-  <span class="head">
-    <a href="/ap/write_request">Independent Advisory Panel on Deaths in Custody</a>
-  </span>
-  <span class="desc">
-        Also called IAP.
-        The Council's work covers deaths in prisons, police custody,
-immigration detention approved premises and also deaths of those
-detained in hospital unde...
-      <br>
-  </span>
-  <span class="bottomline">
-    10 requests made.
-    <br>
-    <span class="date_added">
-      Added on <time datetime="2011-08-27T09:16:21+01:00" title="2011-08-27 09:16:21 +0100">27 August 2011</time>.
-    </span>
-    <br>
-  </span>
-
-    <div class="make-request-quick-button">
-      <a href="/ap/write_request" class="link_button_green">Make a request</a>
-    </div>
-</div>
-
-
-
-<div class="body_listing">
-  <span class="head">
-    <a href="/ap/write_request">Ministry of Justice</a>
-  </span>
-  <span class="desc">
-        Also called MoJ.
-        The Ministry of Justice is one of the largest government departments, employing over 70,000 people.
-      <br>
-  </span>
-  <span class="bottomline">
-    2755 requests made.
-    <br>
-    <span class="date_added">
-      Added on <time datetime="2008-02-21T15:55:30+00:00" title="2008-02-21 15:55:30 +0000">21 February 2008</time>.
-    </span>
-    <br>
-  </span>
-
-    <div class="make-request-quick-button">
-      <a href="/ap/write_request" class="link_button_green">Make a request</a>
-    </div>
-</div>
-
-
-
-
-
-    </div>
-    <div class="pagination"><span class="previous_page disabled">← Previous</span> <em class="current">1</em> <a rel="next" href="https://www.whatdotheyknow.com/select_authority?page=2&amp;query=Minis">2</a> <a class="next_page" rel="next" href="https://www.whatdotheyknow.com/select_authority?page=2&amp;query=Minis">Next →</a></div>
+  <div class="js-hide recipients js-recipients">
+    <p class="recipients-title">
+      Your recipients <a href="#" class="js-clear-recipients clear-recipients">Clear all</a>
+    </p>
+    <div class="js-recipients-list"></div>
+    <p class="js-batch-request-message">
+      You’ve added more than one authority to your recipients, this will
+      create a <a href="#">batch request</a>
+    </p>
   </div>
 </div>
 
-  <div class="asktheeu-promo">
-      <h4 class="asktheeu-promo__header">Looking for an EU Authority?</h4>
-      <p>You can request <em>documents</em> directly from EU Institutions at our sister site
-        <a href="http://asktheeu.org/?utm_source=whatdotheyknow&amp;utm_medium=banner&amp;utm_content=select_authority&amp;utm_campaign=alaveteli-experiments-54">
-          AskTheEU.org
-        </a>.
-        <a href="http://www.asktheeu.org/en/help/requesting/?utm_source=whatdotheyknow&amp;utm_medium=banner&amp;utm_content=select_authority&amp;utm_campaign=alaveteli-experiments-54">
-          Find out more
-        </a>.
+<div class="authority-results">
+
+  <div class='authorities'>
+    <p>Matching authorities</p>
+
+    <div class="authority_search_ahead_results_container">
+      <div id="authority_search_ahead_results">
+
+        <div class="body_listing">
+          <span class="head">
+            <a href="https://www.whatdotheyknow.com/body/number_10">Prime Minister’s Office</a>
+          </span>
+          <span class="desc">
+                Also called Number 10.
+                The Prime Minister or PM is the Head of the UK Government, based
+         in 10 Downing Street ("Number 10"). The Prime Minister is ultimately
+        responsible for t...
+              <br>
+          </span>
+          <span class="bottomline">
+            896 requests made.
+            <br>
+            <span class="date_added">
+              Added on <time datetime="2008-04-20T08:02:30+01:00" title="2008-04-20 08:02:30 +0100">20 April 2008</time>.
+            </span>
+            <br>
+          </span>
+
+          <p>
+            <a href="#"
+               class="link_button_green add-to-request-button js-add-to-request-button"
+               data-recipient-name="Prime Minister’s Office">
+              Add to request
+            </a>
+          </p>
+        </div>
+
+        <div class="body_listing">
+          <span class="head">
+            <a href="#">Independent Advisory Panel on Deaths in Custody</a>
+          </span>
+          <span class="desc">
+                Also called IAP.
+                The Council's work covers deaths in prisons, police custody,
+        immigration detention approved premises and also deaths of those
+        detained in hospital unde...
+              <br>
+          </span>
+          <span class="bottomline">
+            10 requests made.
+            <br>
+            <span class="date_added">
+              Added on <time datetime="2011-08-27T09:16:21+01:00" title="2011-08-27 09:16:21 +0100">27 August 2011</time>.
+            </span>
+            <br>
+          </span>
+
+          <p>
+            <a href="#"
+               class="link_button_green add-to-request-button js-add-to-request-button"
+               data-recipient-name="Independent Advisory Panel on Deaths in Custody">
+              Add to request
+            </a>
+          </p>
+        </div>
+
+        <div class="body_listing">
+          <span class="head">
+            <a href="#">Ministry of Justice</a>
+          </span>
+          <span class="desc">
+                Also called MoJ.
+                The Ministry of Justice is one of the largest government departments, employing over 70,000 people.
+              <br>
+          </span>
+          <span class="bottomline">
+            2755 requests made.
+            <br>
+            <span class="date_added">
+              Added on <time datetime="2008-02-21T15:55:30+00:00" title="2008-02-21 15:55:30 +0000">21 February 2008</time>.
+            </span>
+            <br>
+          </span>
+
+          <p>
+            <a href="#"
+               class="link_button_green add-to-request-button js-add-to-request-button"
+               data-recipient-name="Ministry of Justice">
+              Add to request
+            </a>
+          </p>
+        </div>
+
+      </div>
+      <div class="pagination">
+        <span class="previous_page disabled">← Previous</span> <em class="current">1</em> <a rel="next" href="https://www.whatdotheyknow.com/select_authority?page=2&amp;query=Minis">2</a> <a class="next_page" rel="next" href="https://www.whatdotheyknow.com/select_authority?page=2&amp;query=Minis">Next →</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="authority-groups">
+    <h2>Recipient groups</h2>
+    <div class="body_listing">
+      <h3>UK Secondary Schools</h3>
+      <div class="group-details">
+        1302 recipients
+        <div class="star-rating">
+          <span class="star">★</span>
+          <span class="star">★</span>
+          <span class="star">★</span>
+          <span class="star">★</span>
+          <span class="star">☆</span>
+        </div>
+      </div>
+      <p>
+        <a href="#"
+           class="link_button_green add-to-request-button js-add-to-request-button"
+           data-recipient-name="UK Secondary Schools">
+          Add all to request
+        </a>
       </p>
-      <a href="http://asktheeu.org/?utm_source=whatdotheyknow&amp;utm_medium=banner&amp;utm_content=select_authority&amp;utm_campaign=alaveteli-experiments-54" class="asktheeu-promo__image">
-        <img src="Find%20an%20authority%202%20-%20WhatDoTheyKnow_files/ask-the-eu-logo-c51517273b8a42dd66b0f1793610ad1e.png" alt="AskTheEU.org">
-      </a>
     </div>
 
-</div>
-
-<div id="select_authority_help" class="select_authority_help">
-  <p class="info">Can't find the one you want?</p>
-  <p class="actions">
-    <a href="https://www.whatdotheyknow.com/body/list/all">Browse all</a> or <a href="https://www.whatdotheyknow.com/help/requesting#missing_body">ask us to add one</a>.
-  </p>
+    <div class="body_listing">
+      <h3>All Government Depts</h3>
+      <div class="group-details">
+        830 recipients
+        <div class="verified"><span class="verified-tick">✔</span> Verified</div>
+      </div>
+      <p>
+        <a href="#"
+           class="link_button_green add-to-request-button js-add-to-request-button"
+           data-recipient-name="All Government Depts">
+          Add all to request
+        </a>
+      </p>
+    </div>
+  </div>
 </div>
