@@ -1,81 +1,31 @@
 <div id="wrapper">
-  <div id="content" role="main">
-    <div id="user_signin" class="controller_user">
-      <div id="sign_together" class="sign_together">
-        <h1 id="sign_in_reason" class="sign_in_reason">
-        Please create an account or sign in
-        </h1>
-        <div id="left_half" class="left_half">
-          <h2>Create a new account</h2>
-          <div id="signup" class="signup">
-            <form accept-charset="UTF-8" action="/profile/sign_up" id="signup_form" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" value="✓" type="hidden"><input name="authenticity_token" value="" type="hidden"></div>
-            <p>
-              <label class="form_label" for="user_signup_name"> Your name:</label>
-              <input autocomplete="off" id="user_signup_name" name="user_signup[name]" size="20" tabindex="10" type="text">
-            </p>
-            <div class="form_item_note">
-              Your <strong>name will appear publicly</strong>
-              (<a href="https://www.whatdotheyknow.com/help/privacy#public_request">why?</a>)
-              on this website and in search engines.
-              <a href="https://www.whatdotheyknow.com/help/privacy#real_name">Thinking of using a pseudonym?</a>
-            </div>
-            <p>
-              <label class="form_label" for="user_signup_email">Your e-mail:</label>
-              <input id="user_signup_email" name="user_signup[email]" size="20" tabindex="20" type="text">
-            </p>
-            <div class="form_item_note">
-              We will not reveal your email address to anybody unless <a href="https://www.whatdotheyknow.com/help/privacy">you or
-              the law tell us to</a>.
-            </div>
-            <p>
-              <label class="form_label" for="user_signup_password"> Password:</label>
-              <input autocomplete="off" id="user_signup_password" name="user_signup[password]" size="15" tabindex="30" type="password">
-            </p>
-            <p>
-              <label class="form_label" for="user_signup_password_confirmation"> Confirm password:</label>
-              <input autocomplete="off" id="user_signup_password_confirmation" name="user_signup[password_confirmation]" size="15" tabindex="40" type="password">
-            </p>
-            <div class="form_button">
-              <input id="signup_token" name="token" value="m6mtxwu8eli4uvpr3lz" type="hidden">
-              <input id="signup_modal" name="modal" type="hidden">
-              <input data-disable-with="Sending..." name="commit" tabindex="50" value="Sign up" type="submit">
-            </div>
-          </form></div>
-        </div>
-        <div id="right_half" class="right_half">
-          <div class="sign-in-wrapper">
-            <p class="pretitle">Got an account?</p>
-            <h2>Sign in</h2>
-            <div id="signin" class="signin">
-              <form accept-charset="UTF-8" action="/ap/dashboard" id="signin_form" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" value="✓" type="hidden"><input name="authenticity_token" value="" type="hidden"></div>
-              <p>
-                <label class="form_label" for="user_signin_email">Your e-mail:</label>
-                <input id="user_signin_email" name="user_signin[email]" size="20" tabindex="60" type="text">
-              </p>
-              <p>
-                <label class="form_label" for="user_signin_password">Password:</label>
-                <input autocomplete="off" id="user_signin_password" name="user_signin[password]" size="15" tabindex="70" type="password">
-              </p>
-              <p class="form_note">
-                <a href="https://www.whatdotheyknow.com/profile/change_password/new?pretoken=m6mtxwu8eli4uvpr3lz" tabindex="80">Forgotten your password?</a>
-              </p>
-              <p class="form_checkbox">
-                <input id="remember_me" name="remember_me" tabindex="90" value="1" type="checkbox">
-                <label for="remember_me">
-                  Remember me (keeps you signed in longer; do not use on a public computer)
-                </label>
-              </p>
-              <div class="form_button">
-                <input id="signin_token" name="token" value="m6mtxwu8eli4uvpr3lz" type="hidden">
-                <input id="signin_modal" name="modal" type="hidden">
-                <input name="commit" tabindex="100" value="Sign in" type="submit">
-              </div>
-            </form></div>
-          </div>
-        </div>
-        <div style="clear:both"></div>
+  <div id="content" class="pro-login" role="main">
+    <h2>Log in</h2>
+    <div id="signin" class="signin">
+      <form accept-charset="UTF-8" action="/ap/dashboard" id="signin_form" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" value="✓" type="hidden"><input name="authenticity_token" value="" type="hidden"></div>
+      <p>
+        <label class="form_label" for="user_signin_email">Your e-mail:</label>
+        <input id="user_signin_email" name="user_signin[email]" size="20" tabindex="60" type="text">
+      </p>
+      <p>
+        <label class="form_label" for="user_signin_password">Password:</label>
+        <input autocomplete="off" id="user_signin_password" name="user_signin[password]" size="15" tabindex="70" type="password">
+      </p>
+      <p class="form_checkbox">
+        <input id="remember_me" name="remember_me" tabindex="90" value="1" type="checkbox">
+        <label for="remember_me">
+          Remember me <small>(keeps you signed in longer; do not use on a public computer)</small>
+        </label>
+      </p>
+      <div class="form_button">
+        <input id="signin_token" name="token" value="m6mtxwu8eli4uvpr3lz" type="hidden">
+        <input id="signin_modal" name="modal" type="hidden">
+        <input name="commit" tabindex="100" value="Sign in" type="submit">
       </div>
-    </div>
-    <div style="clear:both"></div>
+      <p class="form_note">
+        <a href="https://www.whatdotheyknow.com/profile/change_password/new?pretoken=m6mtxwu8eli4uvpr3lz" tabindex="80">Forgotten your password?</a>
+      </p>
+    </form>
+  </div>
   </div>
 </div>
