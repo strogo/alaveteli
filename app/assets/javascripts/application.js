@@ -6,4 +6,5 @@
 //= require jquery.cookie
 //= require general
 //= require ba-throttle-debounce
+//= require jquery.deparam
 //= require pro

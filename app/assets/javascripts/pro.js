@@ -1,4 +1,4 @@
-(function($){
+(function($, deparam){
   var $embargoCheckbox = $('.js-embargo-checkbox');
   var $embargoDuration = $('.js-embargo-duration');
   $(function(){
@@ -40,6 +40,7 @@
   var $recipientList = $('.js-recipients-list');
   var $batchRequestMessage = $('.js-batch-request-message');
   var $clearRecipientsButton = $('.js-clear-recipients');
+  var $sendRequestButton = $('.js-send-request');
 
   // Function to set up click handlers for recipient removal buttons
   var bindRemovalButtons = function bindRemovalButtons() {
@@ -87,6 +88,12 @@
           showBatchRequestMessage();
           // Make sure buttons to remove the new recipients work
           bindRemovalButtons();
+          // Update the "write your request" url to include the current
+          // recipients
+          var selectedRecipients = $recipients.find('.js-recipient-remove').map(function() { return $(this).data('recipient-name'); }).get();
+          console.log(selectedRecipients);
+          console.log($.param({recipients: selectedRecipients}));
+          $sendRequestButton.attr('href', '/ap/write_request?' + $.param({recipients: selectedRecipients}));
         });
       });
     }
@@ -104,4 +111,17 @@
     $addToRequestButtons.click(addToRequest);
     $clearRecipientsButton.click(removeAllRecipients);
   });
-})(window.jQuery);
+
+
+  // Write request page
+  $(function() {
+    if($("#write_form").length > 0) {
+      var queryStringParams = deparam(window.location.href.slice(window.location.href.indexOf('?') + 1));
+      var recipientList = queryStringParams.recipients;
+      if(typeof recipientList !== 'undefined' && recipientList !== '') {
+        // Populate the recipient list
+        $('.js-recipients').text(recipientList.join(', '));
+      }
+    };
+  });
+})(window.jQuery, window.deparam);
