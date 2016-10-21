@@ -29,6 +29,10 @@ Alaveteli::Application.routes.draw do
         :as => :ap_find_auth_2,
         :via => :get
 
+  match '/ap/find_auth_2_v2' => 'AlaveteliProfessional#find_auth_2_v2',
+        :as => :ap_find_auth_2_v2,
+        :via => :get
+
   match '/ap/write_request' => 'AlaveteliProfessional#write_request',
         :as => :write_request,
         :via => :get
