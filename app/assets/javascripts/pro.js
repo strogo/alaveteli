@@ -91,8 +91,6 @@
           // Update the "write your request" url to include the current
           // recipients
           var selectedRecipients = $recipients.find('.js-recipient-remove').map(function() { return $(this).data('recipient-name'); }).get();
-          console.log(selectedRecipients);
-          console.log($.param({recipients: selectedRecipients}));
           $sendRequestButton.attr('href', '/ap/write_request?' + $.param({recipients: selectedRecipients}));
         });
       });
@@ -104,24 +102,40 @@
     $recipientList.find('.js-recipient-remove').click();
   };
 
+  var getRecipientsFromQueryString = function getRecipientsFromQueryString() {
+    var queryStringParams = deparam(window.location.href.slice(window.location.href.indexOf('?') + 1));
+    var recipientList = queryStringParams.recipients;
+    if(typeof recipientList !== 'undefined' && recipientList !== '') {
+      return recipientList;
+    } else {
+      return [];
+    }
+  };
+
   $(function(){
     // Trigger this initially for anthing already in the list
     bindRemovalButtons();
-
     $addToRequestButtons.click(addToRequest);
     $clearRecipientsButton.click(removeAllRecipients);
+
+    // Populate any recipients if we've come back from another page
+    var recipientList = getRecipientsFromQueryString();
+    if(recipientList.length > 0) {
+      $.each(recipientList, function(i, recipient) {
+        $addToRequestButtons.filter('[data-recipient-name="' + recipient + '"]').click();
+      });
+    }
   });
 
 
   // Write request page
   $(function() {
-    if($("#write_form").length > 0) {
-      var queryStringParams = deparam(window.location.href.slice(window.location.href.indexOf('?') + 1));
-      var recipientList = queryStringParams.recipients;
-      if(typeof recipientList !== 'undefined' && recipientList !== '') {
+    if($('#write_form').length > 0) {
+      var recipientList = getRecipientsFromQueryString();
+      if(recipientList.length > 0) {
         // Populate the recipient list
         $('.js-recipients').text(recipientList.join(', '));
       }
-    };
+    }
   });
 })(window.jQuery, window.deparam);

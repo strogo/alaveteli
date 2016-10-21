@@ -14,6 +14,8 @@
           <span class="to_public_body_label">To:</span>
           <span class="js-recipients">Prime Minister’s Office</span>
         </p>
+        <% querystring = request.original_url.split("?")[1] %>
+        <p><a href="/ap/find_auth_2?<%=querystring%>">Edit recipients</p>
 
     </div>
   </div>
