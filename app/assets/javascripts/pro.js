@@ -150,9 +150,10 @@
       maxItems: 10,
       render: {
         option: function(body, escape) {
+          var shortDesc = jQuery.trim(escape(body.description)).substring(0, 150).split(" ").slice(0, -1).join(" ") + "...";
           var html = '<div class="recipient-result">';
           html += '<h4 class="name">' + escape(body.name) + '</h4>';
-          html += '<p class="description">' + escape(body.description) + '</p>';
+          html += '<p class="description">' + escape(shortDesc) + '</p>';
           html += '<p class="requests">' + escape(body.requests) + ' requests made</p>';
           html += '</div>';
           return html;
