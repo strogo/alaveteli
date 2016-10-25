@@ -1,0 +1,130 @@
+
+
+<form accept-charset="UTF-8" action="/ap/preview_request" class="new_info_request" id="write_form" method="post"><div style="margin:0;padding:0;display:inline"><input name="utf8" value="✓" type="hidden"><input name="authenticity_token" value="h7T9BLeXXSrYboogv8eMWN8tmGilDbFTG0SyfZRG1QE=" type="hidden"></div>
+  <div id="request_header" class="request_header">
+    <div id="request_header_body" class="request_header_body">
+      <h1>Make a request</h1>
+
+
+
+
+
+
+        <p id="to_public_body" class="to_public_body">
+          <span class="to_public_body_label">To:</span>
+          <input type="text"
+                 class="recipients-input js-recipients-input"
+                 placeholder="Search for an authority">
+        </p>
+
+    </div>
+  </div>
+
+
+  <div class="request_body">
+    <div id="request_advice" class="request_advice">
+        <p>
+            Browse <a href="https://www.whatdotheyknow.com/body/number_10">other requests</a> to 'Prime Minister’s Office' for examples of how to word your request.
+        </p>
+
+      <p>
+        Everything that you enter on this page, including <strong>your name</strong>,
+          will be <strong>displayed publicly</strong> on
+          this website <a href="https://www.whatdotheyknow.com/help/privacy#public_request">forever</a>.
+      </p>
+
+
+      <p>
+        <strong> Can I request information about myself?</strong>
+      <a href="https://www.whatdotheyknow.com/help/requesting#data_protection">No!</a>
+      </p>
+
+      <div class="advice-panel">
+        <ul>
+          <li>Write your request in <strong>simple, precise language</strong>.</li>
+          <li>Ask for <strong>specific</strong> documents or information, this site is not suitable for general enquiries.</li>
+          <li><a href="https://www.whatdotheyknow.com/help/requesting#focused">Keep it <strong>focused</strong></a>, you'll be more likely to get what you want.</li>
+          <li>Make sure the information you are asking for is not already publicly available.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div id="request_form" class="request_form">
+      <div id="request_header_subject" class="request_header_subject">
+        <p>
+          <label class="form_label" for="typeahead_search">Summary:</label>
+          <input id="typeahead_search" name="info_request[title]" size="50" type="text">
+        </p>
+
+        <div class="form_item_note">
+          A one line summary of the information you are requesting,
+      e.g.
+            'Crime statistics by ward level for Wales'
+        </div>
+      </div>
+
+      <div id="typeahead_response" class="typeahead_response">
+      </div>
+
+
+        <p>
+          <label class="form_label" for="outgoing_message_body">
+            Your request:</label>
+          <textarea cols="60" id="outgoing_message_body" name="outgoing_message[body]" rows="20">Dear Prime Minister’s Office,
+
+
+
+Yours faithfully,
+
+Louise Crow</textarea>
+        </p>
+
+        <p>
+          <label class="form_label" for="outgoing_message_embargo">
+            Embargo
+          </label>
+        </p>
+        <p>
+            <input type="checkbox"
+                   value="1"
+                   id="outgoing_message_embargo"
+                   class="js-embargo-checkbox"
+                   name="outgoing_message[embargo]">&nbsp;Embargo this request?
+
+        </p>
+        <div class="js-hide js-embargo-duration">
+          <p>
+            <label class="form_label" for="outgoing_message_embargo_duration">
+              How long for?
+            </label>
+            <select id="outgoing_message_embargo_duration"
+                    name="outgoing_message[embargo_duration]">
+              <option value="3_months">3 Months</option>
+              <option value="6_months">6 Months</option>
+              <option value="9_months">9 Months</option>
+              <option value="12_months">12 Months</option>
+              <option value="forever" disabled>
+                Forever (you need to upgrade your account for permanent embargoes)
+              </option>
+            </select>
+          </p>
+          <p>
+            <label class="form_label">
+              <input type="checkbox"
+                     value="1"
+                     id="set_embargo_default"
+                     name="set_embargo_default">&nbsp;Use these embargo settings for my future requests
+            </label>
+          </p>
+        </div>
+
+      <div class="form_button">
+          <input id="info_request_public_body_id" name="info_request[public_body_id]" value="1016" type="hidden">
+        <input id="submitted_new_request" name="submitted_new_request" value="1" type="hidden">
+        <input id="preview" name="preview" value="1" type="hidden">
+        <input name="commit" value="Preview your public request" type="submit">
+      </div>
+
+    </div>
+  </div>
+</form>

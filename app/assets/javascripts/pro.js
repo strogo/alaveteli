@@ -138,4 +138,41 @@
       }
     }
   });
+
+  // Write request page V2 (autocomplete "TO" field)
+  $(function(){
+    $('.js-recipients-input').selectize({
+      valueField: 'name',
+      labelField: 'name',
+      searchField: 'name',
+      options: [],
+      create: false,
+      maxItems: 10,
+      render: {
+        option: function(body, escape) {
+          var html = '<div class="recipient-result">';
+          html += '<h4 class="name">' + escape(body.name) + '</h4>';
+          html += '<p class="description">' + escape(body.description) + '</p>';
+          html += '<p class="requests">' + escape(body.requests) + ' requests made</p>';
+          html += '</div>';
+          return html;
+        }
+      },
+      load: function(query, callback) {
+        $.ajax({
+          url: '/ap/bodies_json/' + encodeURIComponent(query),
+          type: 'GET',
+          error: function() {
+            callback();
+          },
+          success: function(res) {
+            console.log(res);
+            console.log(res.length);
+            console.log(callback);
+            callback(res);
+          }
+        });
+      }
+    });
+  });
 })(window.jQuery, window.deparam);

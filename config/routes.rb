@@ -37,6 +37,10 @@ Alaveteli::Application.routes.draw do
         :as => :write_request,
         :via => :get
 
+  match '/ap/write_request_v2' => 'AlaveteliProfessional#write_request_v2',
+        :as => :write_request_v2,
+        :via => :get
+
   match '/ap/preview_request' => 'AlaveteliProfessional#preview_request',
       :as => :preview_request,
       :via => [ :get, :post ]
@@ -48,6 +52,10 @@ Alaveteli::Application.routes.draw do
   match '/ap/marketing' => 'AlaveteliProfessional#marketing',
       :as => :marketing,
       :via => [ :get ]
+
+  match '/ap/bodies_json/(:query)' => 'AlaveteliProfessional#bodies_json',
+    :as => :bodies_json,
+    :via => [ :get ]
 
   ####
 

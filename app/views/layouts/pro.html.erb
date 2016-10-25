@@ -14,6 +14,9 @@
 
     <%= render :partial => 'layouts/favicon' %>
 
+    <%= stylesheet_link_tag "selectize", :title => "Main", :rel => "stylesheet" %>
+    <%= stylesheet_link_tag "selectize.bootstrap3", :title => "Main", :rel => "stylesheet" %>
+
     <%= render :partial => 'general/stylesheet_includes' %>
     <% if is_admin? %>
       <%= stylesheet_link_tag "admin", :title => "Main", :rel => "stylesheet" %>
@@ -140,7 +143,8 @@
         });
       </script>
     <% end %>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/1.1.4/typed.min.js">
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/1.1.4/typed.min.js">-->
+
     <%= content_for :javascript %>
 
     <%= render :partial => 'general/before_body_end' %>

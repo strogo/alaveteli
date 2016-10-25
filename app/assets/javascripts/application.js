@@ -7,4 +7,5 @@
 //= require general
 //= require ba-throttle-debounce
 //= require jquery.deparam
+//= require selectize
 //= require pro
