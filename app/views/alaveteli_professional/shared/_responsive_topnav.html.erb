@@ -1,10 +1,27 @@
 <div id="topnav" class="topnav pro">
   <ul id="navigation" class="navigation" role="navigation">
 
-    <li class="<%= 'selected' if params[:controller] == 'request' and ['new', 'select_authority'].include?(params[:action]) %>">
-      <%= link_to _("Make a request"), select_authority_path, :id => 'make-request-link' %>
+    <li class="<%= 'selected' if params[:controller] == 'alaveteli_professional' and params[:action] == 'write_request_v2' %>">
+      <%= link_to _("Start new request"), ap_write_request_v2_path, :id => 'make-request-link' %>
     </li>
 
+    <li class="<%= 'selected' if params[:controller] == 'alaveteli_professional' and params[:action] == 'dashboard' %>">
+      <%= link_to _("Dashboard"), ap_dashboard_path, :id => 'dashboard-link' %>
+    </li>
+
+    <li class="<%= 'selected' if params[:controller] == 'alaveteli_professional' and params[:action] == 'account' %>">
+      <%= link_to _("Account"), "#", :id => 'account-link' %>
+    </li>
+
+    <li class="<%= 'selected' if params[:controller] == 'alaveteli_professional' and params[:action] == 'requests' %>">
+      <%= link_to _("Requests"), "#", :id => 'requests-link' %>
+    </li>
+
+    <li>
+      <%= link_to _("More"), "#", :id => 'more-link' %>
+    </li>
+
+    <!-- TODO - Hide these under a More link which drops down
     <li class="<%= 'selected' if params[:controller] == 'request' and !['new', 'select_authority'].include?(params[:action]) %>">
       <%= link_to _("Browse requests"), request_list_successful_path %>
     </li>
@@ -20,6 +37,7 @@
     <li class="<%= 'selected' if params[:controller] == 'help' %>">
       <%= link_to _("Help"), help_about_path %>
     </li>
+    -->
 
     <li class="account-link-menu-item" >
       <% if ! (controller.action_name == 'signin' or controller.action_name == 'signup') %>
