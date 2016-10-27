@@ -9,12 +9,12 @@
       <%= link_to _("Dashboard"), ap_dashboard_path, :id => 'dashboard-link' %>
     </li>
 
-    <li class="<%= 'selected' if params[:controller] == 'alaveteli_professional' and params[:action] == 'account' %>">
-      <%= link_to _("Account"), "#", :id => 'account-link' %>
-    </li>
-
     <li class="<%= 'selected' if params[:controller] == 'alaveteli_professional' and params[:action] == 'requests' %>">
       <%= link_to _("Requests"), ap_requests_path, :id => 'requests-link' %>
+    </li>
+
+    <li class="<%= 'selected' if params[:controller] == 'alaveteli_professional' and params[:action] == 'account' %>">
+      <%= link_to _("Account"), "#", :id => 'account-link' %>
     </li>
 
     <li class="js-more-menu-link">
