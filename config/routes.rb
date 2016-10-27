@@ -49,6 +49,10 @@ Alaveteli::Application.routes.draw do
       :as => :ap_dashboard,
       :via => [ :get, :post ]
 
+  match '/ap/requests' => 'AlaveteliProfessional#requests',
+      :as => :ap_requests,
+      :via => [ :get, :post ]
+
   match '/ap/marketing' => 'AlaveteliProfessional#marketing',
       :as => :marketing,
       :via => [ :get ]

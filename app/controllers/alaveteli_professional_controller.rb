@@ -36,6 +36,10 @@ class AlaveteliProfessionalController < ApplicationController
     render :dashboard, :layout => 'pro'
   end
 
+  def requests
+    render :requests, :layout => 'pro'
+  end
+
   def marketing
     render :marketing, :layout => 'pro'
   end

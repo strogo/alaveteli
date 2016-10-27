@@ -14,7 +14,7 @@
     </li>
 
     <li class="<%= 'selected' if params[:controller] == 'alaveteli_professional' and params[:action] == 'requests' %>">
-      <%= link_to _("Requests"), "#", :id => 'requests-link' %>
+      <%= link_to _("Requests"), ap_requests_path, :id => 'requests-link' %>
     </li>
 
     <li class="js-more-menu-link">
