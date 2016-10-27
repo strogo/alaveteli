@@ -14,96 +14,73 @@
 
     <div class="dashboard-right-column">
 
-      <div class="dashboard-todo">
-
-        <h2 class="dashboard-todo__title">Things to do today</h2>
-
-        <ul class="dashboard-todo__list">
-          <li class="dashboard-todo__list__item">
-            7 requests are Status unknown. <a href="#">Update statuses.</a>
-          </li>
-          <li class="dashboard-todo__list__item">
-            1 embargo is ending this week. <a href="#">Extend or approve this
-            embargo.</a>
-          </li>
-          <li class="dashboard-todo__list__item">
-            3 requests are overdue or very overdue. <a href="#">Send follow ups (or request internal reviews).</a>
-          </li>
-        </ul>
-
-      </div>  <!-- .dashboard-todo -->
-
-      <div class="dashboard-activity">
-
-        <h2 class="dashboard-activity__title">Activity</h2>
-
-        <div class="dashboard-activity__item">
-          <div class="dashboard-activity__item__time">Just now</div>
-          <div class="dashboard-activity__item__description">
-            <p>
-              You sent a request to Ambridge district council:
-              <a href="#">“Annual budget for survivors of domestic abuse”</a>.
-            </p>
-          </div>
+      <div class="requests">
+        <div class="requests__folder-title">
+          <h2>All requests</h2>
         </div>
-
-        <div class="dashboard-activity__item">
-          <div class="dashboard-activity__item__time">Today, 9am</div>
-          <div class="dashboard-activity__item__description">
-            <p>
-              Your request to the Ministry of Justice: <a href="#">“How much
-              is spent on subsidised parking”</a> has a new response.
-              <a href="#">View</a>
-            </p>
+        <div class="requests__header">
+          <div class="requests__search">
+            <input type="text" placeholder="Search">
           </div>
-        </div>
-
-        <div class="dashboard-activity__item">
-          <div class="dashboard-activity__item__time">Yesterday, 5pm</div>
-          <div class="dashboard-activity__item__description">
-            <p>
-              The embargo for your request “Secondary schools place assignment
-              in Leicester” has ended and is now live. <a href="#">View</a>
-            </p>
+          <div class="requests__sort">
+            <label for="sort-options">Sort by: </label>
+            <select id="sort-options">
+              <option>Last updated</option>
+              <option>First created</option>
+              <option>Title (A-Z)</option>
+            </select>
           </div>
-        </div>
-
-        <div class="dashboard-activity__item">
-          <div class="dashboard-activity__item__time">Yesterday, 12pm</div>
-          <div class="dashboard-activity__item__description">
-            <p>
-              Borsetshire council is now very overdue in responding to your
-              request <a href="#">“Cost of policing for fireworks display”</a>.
-              <a href="#">Request an internal review</a>
-            </p>
+          <div class="requests__filters">
+            <label for="filters">Filter by: </label>
+            <select id="filters" class="filters">
+              <option>All requests</option>
+              <option>Drafts</option>
+              <option>Awaiting response</option>
+              <option disabled>Response recieved</option>
+              <option>Clarification needed</option>
+              <option>Complete</option>
+              <option>Status unknown</option>
+            </select>
           </div>
-        </div>
 
-        <div class="dashboard-activity__item">
-          <div class="dashboard-activity__item__time">18th October</div>
-          <div class="dashboard-activity__item__description">
-            <p>
-              Borsetshire council is now overdue in responding to your request
-              <a href="#">“Cost of policing for fireworks display”</a>.
-              <a href="#">Send an automatic follow up</a>
-            </p>
-          </div>
-        </div>
+        </div> <!-- .requests-header -->
 
-        <div class="dashboard-activity__item">
-          <div class="dashboard-activity__item__time">23rd September</div>
-          <div class="dashboard-activity__item__description">
-            <p>
-              Louise Crow added a new annotation on your request to the
-              Department for Health: <a href="#">“Waiting times”</a>.
-              <a href="#">View</a>
-            </p>
-          </div>
-        </div>
+        <div class="requests__list">
 
+          <div class="request">
+            <h3 class="request__title">
+              <a href="#">Domestic abuse records 2014-2016</a>
+            </h3>
+            <div class="request__meta">
+              <div class="request__recipient">
+                <span class="request__meta__label">Request to</span>
+                Wiltshire Constabulary
+              </div>
+              <div class="request__created">
+                <span class="request__meta__label">Created</span>
+                11-07-2016
+              </div>
+              <div class="request__updated">
+                <span class="request__meta__label">Updated</span>
+                09-07-2016
+              </div>
+              <div class="request__status">
+                <span class="request__meta__label">Status</span>
+                Awaiting response
+              </div>
+              <div class="request__actions">
+                <select id="actions">
+                  <option>Actions</option>
+                  <option>View</option>
+                  <option>Send followup</option>
+                </select>
+              </div>
+            </div>
+          </div> <!-- .request -->
 
+        </div> <!-- .requests__list -->
 
-      </div> <!-- .dashboard-activity -->
+      </div> <!-- .requests -->
 
     </div>  <!-- .dashboard-right-column -->
 
