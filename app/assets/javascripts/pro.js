@@ -11,12 +11,22 @@
     });
   });
 
-  var $accountLink = $('.js-account-link');
+  var $accountLink = $('.js-account-link > a');
   var $accountMenu = $('.js-account-menu');
   $(function(){
     $accountLink.click(function(e){
       e.preventDefault();
       $accountMenu.slideToggle(250);
+      return false;
+    });
+  });
+
+  var $moreMenuLink = $('.js-more-menu-link > a');
+  var $moreMenu = $('.js-more-menu');
+  $(function(){
+    $moreMenuLink.click(function(e){
+      e.preventDefault();
+      $moreMenu.slideToggle(250);
       return false;
     });
   });

@@ -17,27 +17,29 @@
       <%= link_to _("Requests"), "#", :id => 'requests-link' %>
     </li>
 
-    <li>
+    <li class="js-more-menu-link">
       <%= link_to _("More"), "#", :id => 'more-link' %>
-    </li>
 
-    <!-- TODO - Hide these under a More link which drops down
-    <li class="<%= 'selected' if params[:controller] == 'request' and !['new', 'select_authority'].include?(params[:action]) %>">
-      <%= link_to _("Browse requests"), request_list_successful_path %>
-    </li>
+      <div class="more-menu js-hide js-more-menu">
+        <ul>
+          <li class="<%= 'selected' if params[:controller] == 'request' and !['new', 'select_authority'].include?(params[:action]) %>">
+            <%= link_to _("Browse requests"), request_list_successful_path %>
+          </li>
 
-    <li class="<%= 'selected' if params[:controller] == 'public_body' %>">
-      <%= link_to _("View authorities"), list_public_bodies_default_path %>
-    </li>
+          <li class="<%= 'selected' if params[:controller] == 'public_body' %>">
+            <%= link_to _("View authorities"), list_public_bodies_default_path %>
+          </li>
 
-    <% unless AlaveteliConfiguration::blog_feed.empty? %>
-      <li class="<%= 'selected' if params[:controller] == 'general' and params[:action] == 'blog' %>"><%= link_to _("Read blog"), blog_path %></li>
-    <% end %>
+          <% unless AlaveteliConfiguration::blog_feed.empty? %>
+            <li class="<%= 'selected' if params[:controller] == 'general' and params[:action] == 'blog' %>"><%= link_to _("Read blog"), blog_path %></li>
+          <% end %>
 
-    <li class="<%= 'selected' if params[:controller] == 'help' %>">
-      <%= link_to _("Help"), help_about_path %>
+          <li class="<%= 'selected' if params[:controller] == 'help' %>">
+            <%= link_to _("Help"), help_about_path %>
+          </li>
+        </ul>
+      </div>
     </li>
-    -->
 
     <li class="account-link-menu-item" >
       <% if ! (controller.action_name == 'signin' or controller.action_name == 'signup') %>
@@ -52,9 +54,9 @@
             </p>
           </div>
           <ul class="logged-in-menu__links">
+            <li><%= link_to _("My dashboard"), "#" %></li>
             <li><%= link_to _("My requests"), "#" %></li>
-            <li><%= link_to _("My profile"), "#" %></li>
-            <li><%= link_to _("My wall"), "#" %></li>
+            <li><%= link_to _("My account"), "#" %></li>
           </ul>
           <div class="logged-in-menu__signout-link">
             <%= link_to _("Sign out"), "#" %>
