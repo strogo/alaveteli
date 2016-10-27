@@ -43,26 +43,7 @@
 
     <li class="account-link-menu-item" >
       <% if ! (controller.action_name == 'signin' or controller.action_name == 'signup') %>
-        <a href="#" class="account-link js-account-link">Bill<span class="pro-pill">pro</span></a>
-        <div class="logged-in-menu js-hide js-account-menu">
-          <div class="profile-summary">
-            <p class="dashboard-profile">
-              <img src="http://www.fillmurray.com/50/50" class="dashboard-profile__image">
-              <span class="dashboard-profile__name">Bill Murray<span class="pro-pill">pro</span></span>
-              <br/>
-              <span class="dashboard-profile__email">bill.murray@gmail..</span>
-            </p>
-          </div>
-          <ul class="logged-in-menu__links">
-            <li><%= link_to _("My dashboard"), "#" %></li>
-            <li><%= link_to _("My requests"), "#" %></li>
-            <li><%= link_to _("My account"), "#" %></li>
-          </ul>
-          <div class="logged-in-menu__signout-link">
-            <%= link_to _("Sign out"), "#" %>
-          </div>
-          </div>
-        </div>
+        <%= render partial: 'alaveteli_professional/shared/logged_in_menu' %>
       <% else %>
         <%= link_to _("Sign in or sign up"), signin_path(:r => request.fullpath) %>
       <% end %>

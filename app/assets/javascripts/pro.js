@@ -11,7 +11,7 @@
     });
   });
 
-  var $accountLink = $('.js-account-link > a');
+  var $accountLink = $('.js-account-link');
   var $accountMenu = $('.js-account-menu');
   $(function(){
     $accountLink.click(function(e){

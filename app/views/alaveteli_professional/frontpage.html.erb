@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en"><head>
+<html lang="en" class="no-js"><head>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
     <meta charset="utf-8">
     <meta content="authenticity_token" name="csrf-param">
@@ -83,6 +83,13 @@
 
 <meta name="google-site-verification" content="DbAHEzh0igI0rZziSexQh5fTrbRfNPSw8BdmrmNY_70">
 
+<!-- Replace the html tag's no-js class with js -->
+    <script>
+      (function(H){
+        H.className = H.className.replace(/\bno-js\b/,'js')
+      })(document.documentElement);
+    </script>
+
   </head>
   <body class="front">
     <div class="entirebody">
@@ -122,12 +129,19 @@
     </ul>
   </div>
 
-
-        <div id="logged_in_bar" class="logged_in_bar">
-          <div id="logged_in_links" class="logged_in_links">
-              <a href="/ap/login">Sign in or sign up</a>
-          </div>
-        </div>
+      <div id="navigation_search" class="navigation_search">
+        <form id="navigation_search_form" class="navigation_search_form" method="get" action="/search" role="search">
+          <label class="visually-hidden" for="navigation_search_button">
+            Search
+          </label>
+          <input class="navigation_search_button" id="navigation_search_button" name="query" placeholder="Search" title="type your search term here" type="search" />
+          <button type="submit">
+            <span class="visually-hidden">
+              Submit Search
+            </span>
+          </button>
+        </form>
+      </div>
     </div>
 
     <div id="topnav" class="topnav">
@@ -151,18 +165,27 @@
       <a href="/help/about">Help</a>
     </li>
 
-    <li id="navigation_search" class="navigation_search">
-      <form id="navigation_search_form" class="navigation_search_form" method="get" action="/search" role="search">
-        <label class="visually-hidden" for="navigation_search_button">
-          Search
-        </label>
-        <input class="navigation_search_button" id="navigation_search_button" name="query" placeholder="Search" title="type your search term here" type="search">
-        <button type="submit">
-          <span class="visually-hidden">
-            Submit Search
-          </span>
-        </button>
-      </form>
+    <li class="account-link-menu-item" >
+        <a href="#" class="account-link js-account-link">Bill<span class="pro-pill">pro</span></a>
+<div class="logged-in-menu js-hide js-account-menu">
+  <div class="profile-summary">
+    <p class="dashboard-profile">
+      <img src="http://www.fillmurray.com/50/50" class="dashboard-profile__image">
+      <span class="dashboard-profile__name">Bill Murray<span class="pro-pill">pro</span></span>
+      <br/>
+      <span class="dashboard-profile__email">bill.murray@gmail..</span>
+    </p>
+  </div>
+  <ul class="logged-in-menu__links">
+    <li><a href="/ap/dashboard">My dashboard</a></li>
+    <li><a href="#">My requests</a></li>
+    <li><a href="#">My account</a></li>
+  </ul>
+  <div class="logged-in-menu__signout-link">
+    <a href="#">Sign out</a>
+  </div>
+  </div>
+</div>
     </li>
   </ul>
 </div>
@@ -473,7 +496,7 @@ visit <a href="https://www.mysociety.org/?utm_source=whatdotheyknow.com&amp;utm_
         ga('send', 'pageview');
       </script>
 
-    <script src="/assets/application-75adc2dadce4f91287c51a10cd18c9b8.js" type="text/javascript"></script>
+    <script src="/assets/application.js" type="text/javascript"></script>
 
 
     <script>
