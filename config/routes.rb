@@ -49,6 +49,10 @@ Alaveteli::Application.routes.draw do
       :as => :ap_dashboard,
       :via => [ :get, :post ]
 
+  match '/ap/request' => 'AlaveteliProfessional#request_in_progress',
+      :as => :ap_request_in_progress,
+      :via => [ :get, :post ]
+
   match '/ap/requests' => 'AlaveteliProfessional#requests',
       :as => :ap_requests,
       :via => [ :get, :post ]
