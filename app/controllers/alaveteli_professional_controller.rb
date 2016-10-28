@@ -45,6 +45,10 @@ class AlaveteliProfessionalController < ApplicationController
     render :request_in_progress, :layout => 'pro'
   end
 
+  def request_awaiting_response
+    render :request_awaiting_response, :layout => 'pro'
+  end
+
   def marketing
     render :marketing, :layout => 'pro'
   end

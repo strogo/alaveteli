@@ -53,6 +53,10 @@ Alaveteli::Application.routes.draw do
       :as => :ap_request_in_progress,
       :via => [ :get, :post ]
 
+  match '/ap/request_waiting' => 'AlaveteliProfessional#request_awaiting_response',
+      :as => :ap_request_awaiting_response,
+      :via => [ :get, :post ]
+
   match '/ap/requests' => 'AlaveteliProfessional#requests',
       :as => :ap_requests,
       :via => [ :get, :post ]
