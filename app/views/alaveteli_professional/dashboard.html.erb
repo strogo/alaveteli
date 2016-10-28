@@ -23,11 +23,19 @@
             7 requests are Status unknown. <a href="/ap/requests">Update statuses.</a>
           </li>
           <li class="dashboard-todo__list__item">
-            1 embargo is ending this week. <a href="#">Extend or approve this
+            1 embargo is ending this week. <a href="" onclick="$('.ui-dialog-content').dialog('close'); $('.dialog-embargo').dialog(); return false">Extend or approve this
             embargo.</a>
+            <div class="dialog-embargo js-hide" title="Whoops">
+              <p>Sorry, we haven't made this bit yet</p>
+              <p>Why not look at <a href=\"/ap/request\">a request page</a> instead?</p>
+            </div>
           </li>
           <li class="dashboard-todo__list__item">
-            3 requests are overdue or very overdue. <a href="#">Send follow ups (or request internal reviews).</a>
+            3 requests are overdue or very overdue. <a href="" onclick="$('.ui-dialog-content').dialog('close'); $('.dialog-follow-ups').dialog(); return false">Send follow ups (or request internal reviews).</a>
+            <div class="dialog-follow-ups js-hide" title="Whoops">
+              <p>Sorry, we haven't made this bit yet</p>
+              <p>Why not look at <a href=\"/ap/request\">a request page</a> instead?</p>
+            </div>
           </li>
         </ul>
 
@@ -74,7 +82,11 @@
             <p>
               Borsetshire council is now very overdue in responding to your
               request <a href="/ap/request">“Cost of policing for fireworks display”</a>.
-              <a href="">Request an internal review</a>
+              <a href="" onclick="$('.ui-dialog-content').dialog('close'); $('.dialog-internal-reviews').dialog(); return false">Request an internal review</a>
+              <div class="dialog-internal-reviews js-hide" title="Whoops">
+                <p>Sorry, we haven't made this bit yet</p>
+                <p>Why not look at <a href=\"/ap/request\">a request page</a> instead?</p>
+              </div>
             </p>
           </div>
         </div>
@@ -85,7 +97,11 @@
             <p>
               Borsetshire council is now overdue in responding to your request
               <a href="/ap/request">“Cost of policing for fireworks display”</a>.
-              <a href="#">Send an automatic follow up</a>
+              <a href="" onclick="$('.ui-dialog-content').dialog('close'); $('.dialog-automatic-follow-up').dialog(); return false">Send an automatic follow up</a>
+              <div class="dialog-automatic-follow-up js-hide" title="Whoops">
+                <p>Sorry, we haven't made this bit yet</p>
+                <p>Why not look at <a href=\"/ap/request\">a request page</a> instead?</p>
+              </div>
             </p>
           </div>
         </div>

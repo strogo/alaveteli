@@ -11,10 +11,16 @@
   <ul class="logged-in-menu__links">
     <li><%= link_to _("My dashboard"), ap_dashboard_path %></li>
     <li><%= link_to _("My requests"), ap_requests_path %></li>
-    <li><%= link_to _("My account"), "#" %></li>
+    <li><%= link_to _("My account"), "#", onclick: "$('.ui-dialog-content').dialog('close'); $('.dialog-account-link').dialog(); return false" %></li>
+    <div class="dialog-account-link js-hide" title="Whoops">
+      <p>Sorry, we haven't made this bit yet</p>
+    </div>
   </ul>
   <div class="logged-in-menu__signout-link">
-    <%= link_to _("Sign out"), "#" %>
+    <%= link_to _("Sign out"), "#", onclick: "$('.ui-dialog-content').dialog('close'); $('.dialog-account-link').dialog(); return false"  %>
+    <div class="dialog-singout-link js-hide" title="Whoops">
+      <p>Sorry, we haven't made this bit yet</p>
+    </div>
   </div>
   </div>
 </div>

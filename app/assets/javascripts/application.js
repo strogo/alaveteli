@@ -3,6 +3,7 @@
 //= require jquery_ujs
 //= require jquery-ui/datepicker
 //= require jquery-ui/position
+//= require jquery-ui/dialog
 //= require jquery.cookie
 //= require general
 //= require ba-throttle-debounce
