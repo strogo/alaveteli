@@ -46,6 +46,9 @@ class AlaveteliProfessionalController < ApplicationController
   end
 
   def request_awaiting_response
+    if params[:show_new_request_flash]
+      flash.now[:notice] = "We’ve sent your request to the Department for Exiting the European Union"
+    end
     render :request_awaiting_response, :layout => 'pro'
   end
 
