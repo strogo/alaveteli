@@ -42,10 +42,10 @@
     </li>
 
     <li class="account-link-menu-item" >
-      <% if ! (controller.action_name == 'signin' or controller.action_name == 'signup') %>
+      <% if ! (controller.action_name == 'signin' or controller.action_name == 'signup' or controller.action_name == 'login') %>
         <%= render partial: 'alaveteli_professional/shared/logged_in_menu' %>
       <% else %>
-        <%= link_to _("Sign in or sign up"), signin_path(:r => request.fullpath) %>
+        <%= link_to _("Sign in or sign up"), ap_login_path %>
       <% end %>
     </li>
   </ul>

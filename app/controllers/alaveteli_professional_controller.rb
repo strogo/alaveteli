@@ -2,6 +2,7 @@
 class AlaveteliProfessionalController < ApplicationController
 
   def login
+    render :login, :layout => 'pro'
   end
 
   def frontpage
