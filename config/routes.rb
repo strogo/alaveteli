@@ -17,7 +17,7 @@ Alaveteli::Application.routes.draw do
         :as => :ap_login,
         :via => :get
 
-  match '/' => 'AlaveteliProfessional#frontpage',
+  match '/' => 'AlaveteliProfessional#dashboard',
         :as => :frontpage,
         :via => :get
 
