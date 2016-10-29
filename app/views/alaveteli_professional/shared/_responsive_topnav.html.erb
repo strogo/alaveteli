@@ -26,7 +26,7 @@
       <div class="more-menu js-hide js-more-menu">
         <ul>
           <li class="<%= 'selected' if params[:controller] == 'request' and !['new', 'select_authority'].include?(params[:action]) %>">
-            <%= link_to _("Browse requests"), request_list_successful_path %>
+            <%= link_to _("Browse public requests"), request_list_successful_path %>
           </li>
 
           <li class="<%= 'selected' if params[:controller] == 'public_body' %>">
