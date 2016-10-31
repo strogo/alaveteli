@@ -30,6 +30,16 @@ class AlaveteliProfessionalController < ApplicationController
   end
 
   def preview_request
+    @info_request = params[:info_request]
+    @body = PublicBody.visible.find(params[:info_request][:public_body_id])
+    @info_request[:public_body] = @body
+    @outgoing_message = params[:outgoing_message]
+    @set_embargo = params[:set_embargo] == "1"
+    if @set_embargo
+      @set_embargo = true
+      @embargo = params[:embargo]
+      @set_embargo_default = params[:set_embargo_default] == "1"
+    end
     render :preview_request, :layout => 'pro'
   end
 
@@ -48,6 +58,21 @@ class AlaveteliProfessionalController < ApplicationController
   def request_awaiting_response
     if params[:show_new_request_flash]
       flash.now[:notice] = "We’ve sent your request to the Department for Exiting the European Union"
+    end
+    if params[:info_request]
+      # Assuming that if there's an info request param we're coming from the
+      # preview page and so we should use the details from that request
+      @info_request = params[:info_request]
+      @body = PublicBody.visible.find(params[:info_request][:public_body_id])
+      @info_request[:public_body] = @body
+      @outgoing_message = params[:outgoing_message]
+      @set_embargo = params[:set_embargo] == "1"
+      if @set_embargo
+        @set_embargo = true
+        @embargo = params[:embargo]
+        @set_embargo_default = params[:set_embargo_default] == "1"
+      end
+      flash.now[:notice] = "We’ve sent your request to the #{@body.name}"
     end
     render :request_awaiting_response, :layout => 'pro'
   end

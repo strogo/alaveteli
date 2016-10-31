@@ -4,9 +4,20 @@
     Back to requests
   </a>
 
-  <h1>Details on Article 50</h1>
+  <% if @info_request %>
+    <h1><%= @info_request[:title] %></h1>
+  <% else %>
+    <h1>Details on Article 50</h1>
+  <% end %>
 
-  <p>Request to <a href="">Department for Exiting the European Union</a></p>
+  <p>
+    Request to
+    <% if @info_request %>
+      <a href=""><%= @info_request[:public_body][:name] %></a>
+    <% else %>
+      <a href="">Department for Exiting the European Union</a>
+    <% end %>
+  </p>
 
   <div class="request-status-and-actions">
     <p id="request_status" class="request_icon_line icon_waiting_response">
@@ -48,13 +59,17 @@
 
     <div class="correspondence_text">
 
-      <p></p><p>Dear Department for Exiting the European Union,</p>
+      <% if @outgoing_message %>
+        <%= simple_format @outgoing_message[:body] %>
+      <% else %>
+        <p></p><p>Dear Department for Exiting the European Union,</p>
 
-      <p>Please provide the meeting minutes of any discussions around the triggering Article 50.</p>
+        <p>Please provide the meeting minutes of any discussions around the triggering Article 50.</p>
 
-      <p>Yours faithfully,</p>
+        <p>Yours faithfully,</p>
 
-      <p>Bill Murray</p><p></p>
+        <p>Bill Murray</p><p></p>
+      <% end %>
     </div>
 
   </div>

@@ -12,7 +12,8 @@
 
         <p id="to_public_body" class="to_public_body">
           <span class="to_public_body_label">To:</span>
-          <input type="text"
+          <input name="info_request[public_body_id]"
+                 type="text"
                  class="recipients-input js-recipients-input"
                  placeholder="Search for authorities, e.g. Department for Exiting the European Union ">
         </p>
@@ -74,16 +75,16 @@ Bill Murray</textarea>
                    value="1"
                    id="outgoing_message_embargo"
                    class="js-embargo-checkbox"
-                   name="outgoing_message[embargo]">&nbsp;Embargo this request?
+                   name="set_embargo">&nbsp;Embargo this request?
 
         </p>
         <div class="js-hide js-embargo-duration">
           <p>
-            <label class="form_label" for="outgoing_message_embargo_duration">
+            <label class="form_label" for="embargo_duration">
               How long for?
             </label>
-            <select id="outgoing_message_embargo_duration"
-                    name="outgoing_message[embargo_duration]">
+            <select id="embargo_duration"
+                    name="embargo[duration]">
               <option value="3_months">3 Months</option>
               <option value="6_months">6 Months</option>
               <option value="9_months">9 Months</option>
@@ -118,9 +119,6 @@ Bill Murray</textarea>
         </p>
 
       <div class="form_button">
-          <input id="info_request_public_body_id" name="info_request[public_body_id]" value="1016" type="hidden">
-        <input id="submitted_new_request" name="submitted_new_request" value="1" type="hidden">
-        <input id="preview" name="preview" value="1" type="hidden">
         <input name="commit" value="Preview your request" type="submit">
       </div>
 

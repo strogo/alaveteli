@@ -15,34 +15,27 @@
         <div class="correspondence box" id="outgoing-0">
           <p class="preview_to">
             <strong>To</strong>
-              Department for Exiting the European Union
+              <%= @info_request[:public_body][:name] %>
 
           </p>
           <p class="preview_subject">
-            <strong>Subject</strong> Freedom of Information request - Details on Article 50
+            <strong>Subject</strong> <%= @info_request[:title] %>
           </p>
 
           <div class="correspondence_text">
-            <p></p><p>Dear Department for Exiting the European Union,</p>
-
-      <p>Please provide the meeting minutes of any discussions around the triggering Article 50.</p>
-
-      <p>Yours faithfully,</p>
-
-      <p>Bill Murray</p><p></p>
-            <input id="outgoing_message_body" name="outgoing_message[body]" value="Dear mySociety Test Quango,This is an example requestYours faithfully,Louise Crow" type="hidden">
+            <%= simple_format @outgoing_message[:body] %>
           </div>
 
           <p class="event_actions"></p>
         </div>
 
       <p>
-        <input id="info_request_title" name="info_request[title]" value="Example request" type="hidden">
-          <input id="info_request_public_body_id" name="info_request[public_body_id]" value="2" type="hidden">
-
-        <input id="info_request_tag_string" name="info_request[tag_string]" value="" type="hidden">
-        <input id="submitted_new_request" name="submitted_new_request" value="1" type="hidden">
-        <input id="preview" name="preview" value="0" type="hidden">
+        <input type="hidden" name="info_request[title]" value="<%= @info_request[:title] %>">
+        <input type="hidden" name="info_request[public_body_id]" value="<%= @info_request[:public_body_id] %>">
+        <input type="hidden" name="outgoing_message[body]" value="<%= @outgoing_message[:body] %>">
+        <input type="hidden" name="set_embargo" value="<%= @set_embargo %>">
+        <input type="hidden" name="set_embargo_default" value="<%= @set_embargo_default %>">
+        <input type="hidden" name="embargo[duration]" value="<%= @embargo[:duration] %>">
         <a id="reedit_button" href="/ap/write_request_v2">Edit your request</a>
         <input data-disable-with="Sending..." id="submit_button" name="submit" value="Send request" type="submit">
       </p>
