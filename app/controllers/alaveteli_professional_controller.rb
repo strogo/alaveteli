@@ -104,7 +104,7 @@ class AlaveteliProfessionalController < ApplicationController
     {
       id: body.id,
       name: body.name,
-      notes: body.notes,
+      notes: ActionController::Base.helpers.truncate(ActionController::Base.helpers.strip_tags(body.notes), length: 150),
       info_requests_visible_count: body.info_requests_visible_count
     }
   end
