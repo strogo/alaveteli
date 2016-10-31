@@ -152,19 +152,19 @@
   // Write request page V2 (autocomplete "TO" field)
   $(function(){
     $('.js-recipients-input').selectize({
-      valueField: 'name',
+      valueField: 'id',
       labelField: 'name',
       searchField: 'name',
       options: [],
       create: false,
-      maxItems: 10,
+      maxItems: 1,
       render: {
         option: function(body, escape) {
-          var shortDesc = jQuery.trim(escape(body.description)).substring(0, 150).split(" ").slice(0, -1).join(" ") + "...";
+          var shortDesc = jQuery.trim(escape(body.notes)).substring(0, 150).split(" ").slice(0, -1).join(" ") + "...";
           var html = '<div class="recipient-result">';
           html += '<h4 class="name">' + escape(body.name) + '</h4>';
           html += '<p class="description">' + escape(shortDesc) + '</p>';
-          html += '<p class="requests">' + escape(body.requests) + ' requests made</p>';
+          html += '<p class="requests">' + escape(body.info_requests_visible_count) + ' requests made</p>';
           html += '</div>';
           return html;
         }
@@ -178,8 +178,6 @@
           },
           success: function(res) {
             console.log(res);
-            console.log(res.length);
-            console.log(callback);
             callback(res);
           }
         });
