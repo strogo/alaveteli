@@ -6,3 +6,6 @@
 //= require jquery.cookie
 //= require general
 //= require ba-throttle-debounce
+<% if feature_enabled?(:alaveteli_pro) %>
+  <%= require_asset('alaveteli_pro/alaveteli_pro') %>
+<% end %>

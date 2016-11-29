@@ -136,3 +136,7 @@ module Alaveteli
 
   end
 end
+
+module Sprockets::Helpers::RailsHelper
+  include AlaveteliFeatures::Helpers
+end

@@ -5,3 +5,6 @@
 *= require jquery-ui/datepicker
 *= require jquery-ui/tabs
 */
+<% if feature_enabled?(:alaveteli_pro) %>
+  <%= require_asset('responsive/alaveteli_pro/alaveteli_pro') %>
+<% end %>
