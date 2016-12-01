@@ -31,8 +31,10 @@ class AlaveteliProfessionalController < ApplicationController
 
   def preview_request
     @info_request = params[:info_request]
-    @body = PublicBody.visible.find(params[:info_request][:public_body_id])
-    @info_request[:public_body] = @body
+    if !params[:info_request][:public_body_id].blank?
+      @body = PublicBody.visible.find(params[:info_request][:public_body_id])
+      @info_request[:public_body] = @body
+    end
     @outgoing_message = params[:outgoing_message]
     @set_embargo = params[:set_embargo] == "1"
     if @set_embargo

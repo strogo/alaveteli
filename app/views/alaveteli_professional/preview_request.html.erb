@@ -15,7 +15,7 @@
         <div class="correspondence box" id="outgoing-0">
           <p class="preview_to">
             <strong>To</strong>
-              <%= @info_request[:public_body][:name] %>
+              <%= @info_request[:public_body] ? @info_request[:public_body][:name] : '' %>
 
           </p>
           <p class="preview_subject">
@@ -35,7 +35,7 @@
         <input type="hidden" name="outgoing_message[body]" value="<%= @outgoing_message[:body] %>">
         <input type="hidden" name="set_embargo" value="<%= @set_embargo %>">
         <input type="hidden" name="set_embargo_default" value="<%= @set_embargo_default %>">
-        <input type="hidden" name="embargo[duration]" value="<%= @embargo[:duration] %>">
+        <input type="hidden" name="embargo[duration]" value="<%= @embargo ? @embargo[:duration] : '' %>">
         <a id="reedit_button" href="/ap/write_request_v2">Edit your request</a>
         <input data-disable-with="Sending..." id="submit_button" name="submit" value="Send request" type="submit">
       </p>
