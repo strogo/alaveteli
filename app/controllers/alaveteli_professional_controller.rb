@@ -65,7 +65,12 @@ class AlaveteliProfessionalController < ApplicationController
       # Assuming that if there's an info request param we're coming from the
       # preview page and so we should use the details from that request
       @info_request = params[:info_request]
-      @body = PublicBody.visible.find(params[:info_request][:public_body_id])
+      if !params[:info_request][:public_body_id].blank?
+        @body = PublicBody.visible.find(params[:info_request][:public_body_id])
+      else
+        # hardcode default public body
+        @body = PublicBody.find(55314)
+      end
       @info_request[:public_body] = @body
       @outgoing_message = params[:outgoing_message]
       @set_embargo = params[:set_embargo] == "1"
