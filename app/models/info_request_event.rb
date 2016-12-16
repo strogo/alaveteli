@@ -346,6 +346,20 @@ class InfoRequestEvent < ActiveRecord::Base
     comment_id? or (comment if new_record?)
   end
 
+  def resets_clock?
+     is_request_sending? || is_clarification?
+  end
+
+  def is_request_sending?
+    ['sent', 'resent'].include?(type)
+  end
+
+  def is_clarification?
+    info_request.described_state == 'waiting_clarification' &&
+      type == 'followup_sent'
+  end
+
+
   # Display version of status
   def display_status
     if is_incoming_message?

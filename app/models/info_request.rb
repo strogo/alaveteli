@@ -726,6 +726,8 @@ class InfoRequest < ActiveRecord::Base
 
   # The last time that the initial request was sent/resent
   def date_initial_request_last_sent_at
+    date = read_attribute(:date_initial_request_last_sent_at)
+    return date if date
     last_sent = last_event_forming_initial_request
     last_sent.outgoing_message.last_sent_at
   end
@@ -740,6 +742,8 @@ class InfoRequest < ActiveRecord::Base
   # last_event_forming_initial_request. There may be more obscure
   # things, e.g. fees, not properly covered.
   def date_response_required_by
+    date = read_attribute(:date_response_required_by)
+    return date if date
     Holiday.due_date_from(date_initial_request_last_sent_at,
                           late_calculator.reply_late_after_days,
                           AlaveteliConfiguration.working_or_calendar_days)
@@ -748,6 +752,8 @@ class InfoRequest < ActiveRecord::Base
   # This is a long stop - even with UK public interest test extensions, 40
   # days is a very long time.
   def date_very_overdue_after
+    date = read_attribute(:date_very_overdue_after)
+    return date if date
     # public interest test ICO guidance gives 40 working maximum
     Holiday.due_date_from(date_initial_request_last_sent_at,
                           late_calculator.reply_very_late_after_days,
@@ -773,7 +779,19 @@ class InfoRequest < ActiveRecord::Base
 
   # History of some things that have happened
   def log_event(type, params)
-    info_request_events.create!(:event_type => type, :params => params)
+    event = info_request_events.create!(:event_type => type, :params => params)
+    set_due_dates(true) if event.resets_clock?
+  end
+
+  def set_due_dates(reset = false)
+    if reset
+      self.date_initial_request_last_sent_at = Time.now
+    else
+      self.date_initial_request_last_sent_at = date_initial_request_last_sent_at
+    end
+    self.date_response_required_by = date_response_required_by
+    self.date_very_overdue_after = date_very_overdue_after
+    save!
   end
 
   def public_response_events
