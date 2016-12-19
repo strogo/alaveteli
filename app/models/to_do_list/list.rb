@@ -10,7 +10,8 @@ module ToDoList
     def self.item_types
       [ ToDoList::NewResponse,
         ToDoList::ExpiringEmbargo,
-        ToDoList::OverdueRequest ]
+        ToDoList::OverdueRequest,
+        ToDoList::VeryOverdueRequest ]
     end
 
     def items
